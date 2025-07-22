@@ -1,0 +1,54 @@
+/** 
+    Archivo utilizando la dependencia de ZOD
+    Un schema para filtrar los datos obtenidos por el JSON
+    tener la información en el editor y asignar de forma correcta el tipo de datos 
+    utilizar los metodos correctos para cada tipo de dato
+   
+*/
+
+import { z } from 'astro:content'
+import { string } from 'astro:schema'
+
+const imageSchema = z.object({
+    url: z.string(),
+    width: z.number(),
+    heigth: z.number()
+})
+
+
+const featuredImagesSchema = z.object({
+    thumbnail: imageSchema,
+    medium: imageSchema,
+    medium_large: imageSchema,
+    large: imageSchema,
+    full: imageSchema
+})
+
+
+export const BaseWPSchema = z.object({
+    id: z.number(),
+    title: z.object({
+        rendered: z.string()
+    }),
+    content: z.object({
+        rendered: z.string()
+    }),
+    featured_images: featuredImagesSchema,
+    acf: z.object({
+      subtitle: z.string()  
+    }),
+    
+})
+
+// Schema para la págna de proceso.astro
+const processSchema = z.object({
+    title: z.string(),
+    description: z.string(),
+    image: z.string()
+})
+
+export const ProcessPageSchema = BaseWPSchema.extend({
+    acf: z.object({
+        subtitle: z.string()
+    }).catchall(processSchema)
+})

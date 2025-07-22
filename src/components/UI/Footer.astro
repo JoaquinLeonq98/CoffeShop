@@ -1,0 +1,24 @@
+---
+import FooterBox from "./FooterBox.astro";
+
+
+---
+<footer class="bg-coffee-900 pt-20">
+    <div class="max-w-7xl mx-auto mt-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <FooterBox heading="Ubicación">
+            <p>Coffe Street 39</p>
+            <p>Londres, UK</p>
+        </FooterBox>
+        <FooterBox heading="Reservación">
+            <p>Tel. 5545095380</p>
+            <a href="tel:+5545095380">Llamar</a>
+        </FooterBox>
+        <FooterBox heading="Horario">
+            <p>Lun - Jue: 11:00 - 22:00</p>
+            <p>Vie - Sab: 09:00 - 24:00</p>
+            <p>Domingo: Cerrado</p>
+        </FooterBox>
+
+    </div>
+    <p  class="text-white text-center text-sm py-10"> Todos los derechos reservados &copy; {new Date().getFullYear()}</p>
+</footer>
