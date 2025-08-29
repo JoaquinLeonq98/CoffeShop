@@ -7,12 +7,11 @@
 */
 
 import { z } from 'astro:content'
-import { string } from 'astro:schema'
 
 const imageSchema = z.object({
     url: z.string(),
     width: z.number(),
-    heigth: z.number()
+    height: z.number()
 })
 
 

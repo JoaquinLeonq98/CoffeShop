@@ -6,6 +6,6 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
       vite: {    plugins: [tailwindcss()],  },
       image:{
-            domains: ['coffeeshop.local']
+            domains: ['coffee.local']
       }
 });
