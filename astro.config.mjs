@@ -4,7 +4,7 @@ import { loadEnv } from "vite";
 
 import netlify from "@astrojs/netlify";
 
-// En Netlify: Site configuration → Environment variables → Add variable
+// En Netlify: Project configuration → Environment variables → Add variable
 // (API_URL, HOME_URL). Builds: mismo valor que en tu .env.production local.
 //
 // Solo cargamos el modo del build: si mezcláramos development+production, un
@@ -26,7 +26,7 @@ if (
   !(process.env.API_URL ?? fromFiles.API_URL)
 ) {
   throw new Error(
-    'Netlify: falta API_URL. En el panel: Site configuration → Environment variables → "Add a variable" → API_URL = URL base de la REST API de WordPress (ej. https://tudominio.com/wp-json/wp/v2).',
+    "Netlify: falta API_URL. Panel: Project configuration → Environment variables → Add variable (scope Builds). O CLI: netlify env:set API_URL \"https://tudominio.com/wp-json/wp/v2\"",
   );
 }
 
