@@ -1,23 +1,21 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
-import tsconfigPaths from "vite-tsconfig-paths";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import netlify from "@astrojs/netlify";
 
-// Rutas absolutas desde este archivo (no desde process.cwd()) para que Linux/Netlify
-// resuelvan "@/..." igual que en local.
+// `import.meta.url` → ruta absoluta; el alias con RegExp es lo que Vite documenta para
+// `@/…` y evita fallos de resolución en el bundle SSR (p. ej. en Netlify Linux).
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const srcDir = path.join(__dirname, "src");
+const srcDirSlash = path.join(__dirname, "src") + path.sep;
 
 export default defineConfig({
   vite: {
-    plugins: [tsconfigPaths({ root: __dirname }), tailwindcss()],
+    plugins: [tailwindcss()],
     resolve: {
-      alias: {
-        "@": srcDir,
-      },
+      // Solo `@/…` (no `@` suelto: rompería paquetes tipo `@astrojs/...`).
+      alias: [{ find: /^@\//, replacement: srcDirSlash }],
     },
   },
   image: {
