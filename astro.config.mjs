@@ -6,16 +6,11 @@ import netlify from "@astrojs/netlify";
 
 export default defineConfig({
   vite: {
-    plugins: [
-      tailwindcss(),
-      tsconfigPaths(),
-    ],
+    plugins: [tailwindcss(), tsconfigPaths()],
   },
-image:{
-
-  domains:['darkgrey-alpaca-160443.hostingersite.com', 'coffee.local'],
-},
+  image: {
+    domains: ["darkgrey-alpaca-160443.hostingersite.com", "coffee.local"],
+  },
   adapter: netlify(),
 });
-
 
