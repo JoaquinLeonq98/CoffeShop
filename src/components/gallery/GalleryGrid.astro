@@ -29,11 +29,4 @@ const { gallery } = Astro.props;
     }
 </div>
 
-<!-- 
---------------------------------------------------------------------------------------------
-Se instala la dependencia photoswipe
-Se realiza la configuración en este componente
---------------------------------------------------------------------------------------------
- -->
-
-<script src="./gallery-grid-client.ts"></script>
+<!-- PhotoSwipe: script en HomeGallery.astro y en pages/galeria.astro (evita bug de build con <Picture />). -->
