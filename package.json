@@ -31,6 +31,7 @@
     "@typescript-eslint/types": "^8.58.1",
     "@typescript-eslint/typescript-estree": "^8.58.1",
     "@typescript-eslint/visitor-keys": "^8.58.1",
+    "@typescript-eslint/project-service": "^8.58.1",
     "@vue/compiler-sfc": "^3.5.32",
     "postcss": "^8.5.9",
     "vite-tsconfig-paths": "^6.1.1"
