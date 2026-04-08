@@ -27,6 +27,7 @@
     "@types/ms": "^2.1.0",
     "@types/nlcst": "^2.0.3",
     "@types/node": "^25.5.2",
+    "@typescript-eslint/tsconfig-utils": "^8.58.1",
     "@typescript-eslint/types": "^8.58.1",
     "@typescript-eslint/typescript-estree": "^8.58.1",
     "@typescript-eslint/visitor-keys": "^8.58.1",
