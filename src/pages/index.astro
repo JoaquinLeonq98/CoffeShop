@@ -4,6 +4,7 @@ import bg from "../assets/background.svg";
 import CategoryIconLabel from "../components/ui/CategoryIconLabel.astro";
 import HomeGallery from "../components/gallery/HomeGallery.astro";
 import ProductsMenu from "../components/menu/ProductsMenu.astro";
+import MenuPhotoSwipeScript from "../components/menu/MenuPhotoSwipeScript.astro";
 ---
 <Layout 
     title="Inicio"
@@ -30,6 +31,5 @@ import ProductsMenu from "../components/menu/ProductsMenu.astro";
         <HomeGallery slot='after-main-content'/>
 
         <ProductsMenu slot='after-main-content'/>
+        <MenuPhotoSwipeScript />
 </Layout>
-
-<script src="../components/menu/menu-photoswipe-client.ts"></script>
