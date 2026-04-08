@@ -1,7 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import bg from '../assets/bg_home.jpg'
-import CategoryIconLabel from "../components/UI/CategoryIconLabel.astro"
+import Layout from "@/layouts/Layout.astro"
+import bg from '@/assets/bg_home.jpg'
+import CategoryIconLabel from "@/components/ui/CategoryIconLabel.astro"
+import HomeGallery from "@/components/gallery/HomeGallery.astro"
+import ProductsMenu from "@/components/menu/ProductsMenu.astro"
 ---
 <Layout 
     title="Inicio"
@@ -23,5 +25,9 @@ import CategoryIconLabel from "../components/UI/CategoryIconLabel.astro"
             <CategoryIconLabel icon= 'icon_coffee.svg' text='Café'/>
             <CategoryIconLabel icon= 'icon_dessert.svg' text='Postres'/>
             <CategoryIconLabel icon= 'icon_tea.svg' text='Té'/> 
-        </div>      
+        </div> 
+
+        <HomeGallery slot='after-main-content'/>
+
+        <ProductsMenu slot='after-main-content'/>
 </Layout>

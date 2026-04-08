@@ -1,14 +1,13 @@
 @import "tailwindcss";
 
-/* 
+/*
     Revisar la documentación de Tailwind v4.0
     aplicaión de tema customizado, para exteneder la paleta de colores
     definir fuentes de letra, de forma default al menos en este proyecto
 
 */
 
-
-@theme{
+@theme {
     --default-font-family: "Outfit", sans-serif;
     --font-mono: "PT Sans", sans-serif;
 
@@ -27,17 +26,15 @@
     --icon-size: 6rem;
 }
 
+/*
 
-/* 
-
-Utilidad para definir el tamaño y comportamiento de un icon y poder utilizarlo como clase 
+Utilidad para definir el tamaño y comportamiento de un icon y poder utilizarlo como clase
 dentro de tailwind
 
 */
 
-
 @utility coffee-icon {
-    content: '';
+    content: "";
     background-image: url("../assets/coffee.svg");
     background-size: var(--icon-size);
     background-position: center;
@@ -45,4 +42,15 @@ dentro de tailwind
     height: var(--icon-size);
     display: block;
     margin-inline: auto;
+}
+
+@utility bg-menu-image {
+    background-image: url("../assets/menu_artwork.svg");
+}
+
+.input-label {
+    @apply text-coffee-900 uppercase font-bold text-lg;
+}
+.input-field {
+    @apply border-coffee-900 border-2 p-2;
 }

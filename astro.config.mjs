@@ -1,11 +1,21 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
-// https://astro.build/config
+import netlify from "@astrojs/netlify";
+
 export default defineConfig({
-      vite: {    plugins: [tailwindcss()],  },
-      image:{
-            domains: ['coffee.local']
-      }
+  vite: {
+    plugins: [
+      tailwindcss(),
+      tsconfigPaths(),
+    ],
+  },
+image:{
+
+  domains:['darkgrey-alpaca-160443.hostingersite.com', 'coffee.local'],
+},
+  adapter: netlify(),
 });
+
+

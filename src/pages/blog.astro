@@ -1,6 +1,7 @@
 ---
+import BlogPosts from "../components/blog/BlogPosts.astro";
 import Layout from "../layouts/Layout.astro";
-import {BaseWPSchema} from "../types"
+import {BaseWPSchema, PostSchema, PostsSchema} from "../types"
 
 // ECMACSCRIPT 2022 Para el Manejo de promesas y consultas a APIS
 const url = `${import.meta.env.API_URL}/pages?slug=blog`
@@ -16,7 +17,7 @@ const data = BaseWPSchema.parse(json[0])
 >
 
      <div class="text-xl space-y-3 mt-10 lg:mt-0" set:html={data.content.rendered}></div>
- 
+     <BlogPosts/>
 
 
 </Layout>
