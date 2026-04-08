@@ -37,16 +37,16 @@ Se realiza la configuración en este compoenente
  -->
 
 <script>
-    import PhotoSwipeLightbox from "photoswipe/lightbox";
-    import 'photoswipe/style.css'
-    
-    const lightbox = new PhotoSwipeLightbox({
-    gallery: '#gallery',
-    children: 'a', 
-    pswpModule: () => import('photoswipe')
-    })
-    lightbox.init()
-    document.addEventListener('astro:after-swap', () => {
-        lightbox.init()
-    });
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+  import "photoswipe/style.css";
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: "#gallery",
+    children: "a",
+    pswpModule: () => import("photoswipe"),
+  });
+  lightbox.init();
+  document.addEventListener("astro:after-swap", () => {
+    lightbox.init();
+  });
 </script>
