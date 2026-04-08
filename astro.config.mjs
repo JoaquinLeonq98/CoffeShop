@@ -2,15 +2,21 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 import netlify from "@astrojs/netlify";
 
+// Rutas absolutas desde este archivo (no desde process.cwd()) para que Linux/Netlify
+// resuelvan "@/..." igual que en local.
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const srcDir = path.join(__dirname, "src");
+
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss(), tsconfigPaths()],
+    plugins: [tsconfigPaths({ root: __dirname }), tailwindcss()],
     resolve: {
       alias: {
-        "@": path.resolve("./src"),
+        "@": srcDir,
       },
     },
   },
