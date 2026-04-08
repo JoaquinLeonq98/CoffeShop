@@ -28,6 +28,7 @@
     "@types/nlcst": "^2.0.3",
     "@types/node": "^25.5.2",
     "@vue/compiler-sfc": "^3.5.32",
+    "postcss": "^8.5.9",
     "vite-tsconfig-paths": "^6.1.1"
   },
   "overrides": {
