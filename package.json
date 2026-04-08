@@ -31,6 +31,7 @@
   },
   "overrides": {
     "@astrojs/internal-helpers": "0.8.0",
+    "tinyglobby": "0.2.15",
     "uqr": "0.1.2"
   }
 }
