@@ -42,6 +42,6 @@
     "tinyglobby": "0.2.15",
     "uqr": "0.1.2",
     "@vue/shared": "3.5.31",
-    "@vue/compiler-ssr" :"3.5.32"
+    "@vue/compiler-ssr": "3.5.31"
   }
 }
