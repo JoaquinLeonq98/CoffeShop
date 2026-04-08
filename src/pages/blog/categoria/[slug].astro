@@ -1,7 +1,11 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import PostCard from "@/components/blog/PostCard.astro";
-import { CategoriesSlugSchema, CategorySchema, PostsSchema } from "@/types";
+import Layout from "../../../layouts/Layout.astro";
+import PostCard from "../../../components/blog/PostCard.astro";
+import {
+  CategoriesSlugSchema,
+  CategorySchema,
+  PostsSchema,
+} from "../../../types";
 
 export async function getStaticPaths() {
     const res = await fetch(
