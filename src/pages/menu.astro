@@ -18,6 +18,6 @@ const data = BaseWPSchema.parse(json[0]);
   bgImage={data.featured_images.full.url}
 >
   <MenuPageIntro data={data} />
-  <ProductsMenu slot="after-main-content" />
+  <ProductsMenu slot="after-main-content" overlapMain={false} />
   <MenuPhotoSwipeScript />
 </Layout>

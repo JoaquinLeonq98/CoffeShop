@@ -4,6 +4,7 @@ import PostMeta from "../../components/blog/PostMeta.astro";
 import Postcategories from "../../components/blog/Postcategories.astro";
 import Picture from "astro/components/Picture.astro";
 import { PostSchema } from "../../types";
+import { fixPublicIconSrcPaths } from "../../utils/cms-html";
 
 export const prerender = false  //astro No compila esta Página 
 
@@ -14,6 +15,7 @@ const json = await res.json()
 const post = PostSchema.safeParse(json[0])
 if(!post.success) return Astro.redirect('/404')
 const { title, featured_images, date, category_details, content } = post.data
+const articleHtml = fixPublicIconSrcPaths(content.rendered)
 
 ---
 
@@ -37,7 +39,7 @@ const { title, featured_images, date, category_details, content } = post.data
         class="w-full"
         />
 
-        <div class="text-lg space-y-3 mt-5" set:html={content.rendered}></div>
+        <div class="text-lg space-y-3 mt-5" set:html={articleHtml}></div>
     </article>
     
     

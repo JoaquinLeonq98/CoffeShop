@@ -21,7 +21,7 @@ const isActive = (href: string) => {
     navigation.map(item => 
     <a
     href={item.href}
-    class={`${isActive(item.href) ? 'text-coffee-400' : 'text-white hover:text-coffee-400'} uppercase text-lg font-bold`}
+    class={`${isActive(item.href) ? 'text-coffee-400' : 'text-white hover:text-coffee-400'} uppercase text-lg font-bold transition-colors duration-300 ease-out motion-reduce:transition-none`}
     >{item.name}</a>
         )}
 </nav>

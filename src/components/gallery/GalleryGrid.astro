@@ -11,11 +11,12 @@ const { gallery } = Astro.props;
 <div id='gallery' class="grid grid-cols-1 lg:grid-cols-3 gap-5">
     {
         gallery.map((image) => (
-        <a 
-            href={image.full.url}   
+        <a
+            class="group block overflow-hidden rounded-xl shadow-md shadow-coffee-900/10 transition-shadow duration-300 hover:shadow-xl hover:shadow-coffee-900/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coffee-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+            href={image.full.url}
             data-pswp-width={image.full.width}
             data-pswp-height={image.full.height}
-            target='_blank'
+            target="_blank"
             >
                 <Picture
                     src={image.large.url}
@@ -23,6 +24,7 @@ const { gallery } = Astro.props;
                     width={image.large.width}
                     height={image.large.height}
                     formats={["webp", "avif"]}
+                    class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.06] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                 />
         </a>
         ))

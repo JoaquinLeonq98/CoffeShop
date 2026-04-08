@@ -5,12 +5,20 @@ interface Props {
 }
 
 const { icon, text } = Astro.props
+const iconSrc =
+    icon.startsWith('http://') || icon.startsWith('https://') || icon.startsWith('/')
+        ? icon
+        : `/${icon.replace(/^\.\//, '')}`
 ---
 <div class="py-10 space-y-5 flex flex-col items-center">
-    <img 
-        src={icon} 
-        alt={`Icono`}
-        class="max-w-52"
-    >
+    <img
+        src={iconSrc}
+        alt={text}
+        width="240"
+        height="170"
+        loading="eager"
+        decoding="async"
+        class="max-w-52 h-auto w-full"
+    />
     <h3 class=" text-4xl text-coffee-800 font-mono">{text}</h3>
 </div>

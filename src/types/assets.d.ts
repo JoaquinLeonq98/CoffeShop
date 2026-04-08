@@ -3,6 +3,11 @@ declare module "*.svg" {
   export default asset;
 }
 
+declare module "*.svg?url" {
+  const src: string;
+  export default src;
+}
+
 declare module "*.png" {
   const asset: { src: string };
   export default asset;
