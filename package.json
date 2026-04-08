@@ -19,7 +19,14 @@
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
+    "@types/estree": "^1.0.8",
+    "@types/geojson": "^7946.0.16",
+    "@types/hast": "^3.0.4",
     "@types/leaflet": "^1.9.21",
+    "@types/mdast": "^4.0.4",
+    "@types/ms": "^2.1.0",
+    "@types/nlcst": "^2.0.3",
+    "@types/node": "^25.5.2",
     "vite-tsconfig-paths": "^6.1.1"
   },
   "overrides": {
