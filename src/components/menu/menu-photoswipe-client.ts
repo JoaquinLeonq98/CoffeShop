@@ -1,16 +1,17 @@
 import PhotoSwipeLightbox from "photoswipe/lightbox";
+import PhotoSwipe from "photoswipe";
 import "photoswipe/style.css";
 
 const coffeeLightbox = new PhotoSwipeLightbox({
   gallery: "#coffee-menu",
   children: "a",
-  pswpModule: () => import("photoswipe"),
+  pswpModule: PhotoSwipe,
 });
 
 const foodLightbox = new PhotoSwipeLightbox({
   gallery: "#food-menu",
   children: "a",
-  pswpModule: () => import("photoswipe"),
+  pswpModule: PhotoSwipe,
 });
 
 coffeeLightbox.init();
