@@ -1,27 +1,39 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import bg from '../assets/bg_home.jpg'
-import CategoryIconLabel from "../components/UI/CategoryIconLabel.astro"
+import Layout from "../layouts/Layout.astro";
+/** URL para CSS; el import .svg por defecto en Astro 6 es componente, no `{ src }`. */
+import bgHeroUrl from "../assets/background.svg?url";
+import iconCoffeeUrl from "../assets/icon_coffee.svg?url";
+import iconDessertUrl from "../assets/icon_dessert.svg?url";
+import iconTeaUrl from "../assets/icon_tea.svg?url";
+import CategoryIconLabel from "../components/ui/CategoryIconLabel.astro";
+import HomeGallery from "../components/gallery/HomeGallery.astro";
+import ProductsMenu from "../components/menu/ProductsMenu.astro";
+import MenuPhotoSwipeScript from "../components/menu/MenuPhotoSwipeScript.astro";
 ---
 <Layout 
     title="Inicio"
     subtitle="Disfruta de una deliciosa taza de café"
-    bgImage={bg.src}>
+    bgImage={bgHeroUrl}>
 
-    <h2 class="text-coffee-400 text-center font-black uppercase text-lg">
+    <h2 class="text-coffee-400 text-center font-black uppercase text-lg scroll-reveal">
         Conoce más
         <span class="block text-4xl text-coffee-900">Sobre Nosotros</span>
     </h2>
 
-    <p class="text-center text-lg mt-10">
+    <p class="text-center text-lg mt-10 scroll-reveal scroll-reveal-delay-1">
         Desde 1939, nuestra cafetería ha sido un rincón acogedor donde el buen café y la comida hecha con cariño son protagonistas. Aquí no solo vienes a disfrutar de una bebida: vienes a saborear el resultado de décadas de dedicación, recetas caseras y una selección cuidadosa de ingredientes frescos y de calidad. </p>
 
-    <p class="text-center text-lg mt-10">
+    <p class="text-center text-lg mt-10 scroll-reveal scroll-reveal-delay-2">
         En cada plato y en cada taza encontrarás el equilibrio perfecto entre tradición y sabor. Desde nuestro café artesanal hasta nuestros desayunos, almuerzos y repostería, todo está preparado con productos naturales, sin atajos ni artificios. </p>
         
-        <div class=" grid grid-cols-1 lg:grid-cols-3 gap-5">
-            <CategoryIconLabel icon= 'icon_coffee.svg' text='Café'/>
-            <CategoryIconLabel icon= 'icon_dessert.svg' text='Postres'/>
-            <CategoryIconLabel icon= 'icon_tea.svg' text='Té'/> 
-        </div>      
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <CategoryIconLabel icon={iconCoffeeUrl} text='Café'/>
+            <CategoryIconLabel icon={iconDessertUrl} text='Postres'/>
+            <CategoryIconLabel icon={iconTeaUrl} text='Té'/>
+        </div> 
+
+        <HomeGallery slot='after-main-content'/>
+
+        <ProductsMenu slot='after-main-content'/>
+        <MenuPhotoSwipeScript />
 </Layout>

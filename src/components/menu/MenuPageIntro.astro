@@ -1,0 +1,27 @@
+---
+import { Picture } from "astro:assets";
+import type { z } from "zod";
+import { BaseWPSchema } from "../../types";
+import { fixPublicIconSrcPaths } from "../../utils/cms-html";
+
+interface Props {
+  data: z.infer<typeof BaseWPSchema>;
+}
+
+const { data } = Astro.props;
+const introHtml = fixPublicIconSrcPaths(data.content.rendered);
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 pb-8 lg:pb-12">
+  <Picture
+    src={data.featured_images.medium_large.url}
+    alt={`Imagen de ${data.title.rendered}`}
+    width={data.featured_images.medium_large.width}
+    height={data.featured_images.medium_large.height}
+    formats={["avif", "webp"]}
+  />
+  <div
+    class="text-xl space-y-3 mt-10 lg:mt-0"
+    set:html={introHtml}
+  />
+</div>
